@@ -12,6 +12,10 @@
     width: 200px;
     height: 400px;
     border: 2px solid #000000;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0.5px 1px 7px #ff0000;
+    
 }
 
 .container img{
@@ -25,6 +29,7 @@
 
 .container h2{
     font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -32,10 +37,18 @@
     color: orangered;
 }
 
-.container button{
+.container button {
     background-color: #000000;
-    color: white;
-    display: flex;
-    justify-Content: center; 
-    flex-Wrap: wrap;
-}
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; 
+    transition: all 0.3s ease;
+  }
+
+.container button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
