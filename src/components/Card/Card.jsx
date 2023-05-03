@@ -10,7 +10,7 @@ const Card = (props) => {
          <h2>Species : {props.species}</h2>
          <h2>Gender : {props.gender}</h2>
          <h2>Origin : {props.origin}</h2>
-         <button onClick = {props.onClose}>Cerrar</button>
+         <button onClick = {props.onClose}>X</button>
       </div>
    );
 }
