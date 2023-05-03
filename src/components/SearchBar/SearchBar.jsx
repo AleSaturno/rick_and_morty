@@ -2,7 +2,7 @@ import style from './SearchBar.module.css'
 
 const SearchBar = (props) => {
    return (
-      <div className={style.container}>
+      <div>
          <input type='search' />
          <button onClick={props.onSearch}>Agregar</button>
       </div>
