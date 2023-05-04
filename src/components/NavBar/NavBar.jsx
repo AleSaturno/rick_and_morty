@@ -2,10 +2,11 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import style from './NavBar.module.css'
 
 
-const NavBar = () =>{
+const NavBar = ({onSearch}) =>{
     return (
         <div className= {style.nav}>
-            <SearchBar/>
+            <SearchBar onSearch = {onSearch}/>
+            
         </div>
     )
 }
