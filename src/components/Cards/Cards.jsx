@@ -1,13 +1,28 @@
 import style from './Cards.module.css'
 import Card from '../Card/Card';
 
-const Cards = (props) => {
-  const {characters} = props
+const Cards = ({characters , onClose}) => {
+  
    return(
       <div className= {style.contenedor}>
-         {characters.map((item) => 
-            <Card key ={item.id} name={item.name} status={item.status} species={item.species} gender={item.gender} origin={item.origin.name} image={item.image} onClose={() => alert('Emulamos que se cierra la Card')} />
-         )}
+           {
+            characters.map(({id, name, species, gender, image, origin, status}) =>{
+               return (
+                 <Card 
+                 key={id}
+                 id={id}
+                 name= {name}
+                 species={species}
+                 gender={gender}
+                 image={image}
+                 origin={origin.name}
+                 status={status}
+                 onClose={onClose}
+                 />
+               )
+            })
+            
+         }
       </div>
    )   
 }
