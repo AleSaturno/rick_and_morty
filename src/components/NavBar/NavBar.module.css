@@ -1,5 +1,10 @@
 .nav{
-    background-color: green;
-    width: 100%;
-    align-items: rigth;
+    background-color: rgba(0, 0, 0, 0.329);
+    backdrop-filter: blur(3px);
+    border: 1px solid purple;
+    border-radius: .5em;
+    box-shadow: 0.5px 1px 7px rgb(23, 0, 128);
+
+
 }
+
