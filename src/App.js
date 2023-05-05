@@ -4,16 +4,13 @@ import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import axios from 'axios';
 import {Routes, Route } from 'react-router-dom';
-import Home from './components/Home/home.jsx';
 import About from './components/About/about.jsx';
+import Detail from './components/Detail/Detail';
 
 
 function App() {
 
-      <Routes>
-         <Route path = "" element = {<Home/>} />
-         <Route path = "/about" element = {<About/>} />
-      </Routes>
+      
    const [characters,setCharacters] = useState([]);
    const [requestedIds, setRequestedIds] = useState([]);
    
@@ -40,8 +37,14 @@ function App() {
    return (
       <div className='App'>
          <NavBar onSearch = {onSearch} />
-         {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
-         <Cards characters={characters} onClose = {onClose}/>
+
+         <Routes>
+            <Route path = "/home" element = {<Cards characters={characters} onClose = {onClose}/>} />
+            <Route path = "/about" element = {<About/>} />
+            <Route path='/detail/:id' element={<Detail/>}/>
+         </Routes>
+         
+         
       </div>
    );
 }
