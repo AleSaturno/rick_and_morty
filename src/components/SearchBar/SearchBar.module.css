@@ -1,5 +1,5 @@
 .container{
-    display: flex;
+    display: contents;
     justify-content: center;
     align-items: center;
     margin: 0px 0;
@@ -31,3 +31,4 @@
     background-color: #b1bd07a1;
     color: #000000;
 }
+
