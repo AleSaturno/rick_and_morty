@@ -7,7 +7,7 @@ const NavBar = ({onSearch}) =>{
         <nav className ={style.nav} >
             <div className={style.buttonContainer}>
                 <button className={style.Link}>
-                    <NavLink to= '/'>Home</NavLink> 
+                    <NavLink to= '/home'>Home</NavLink> 
                 </button>
                 <button className={style.Link}>
                     <NavLink to='/about'>about</NavLink>
