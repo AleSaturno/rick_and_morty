@@ -10,7 +10,17 @@ const validation = (userData) =>{
     if(!userData.email.length > 35){
         errors.email = 'El usuario no debe superar 35 caracteres';
     }
-    
+
+    if(!/^(?=.*\d).+$/.test(userData.password)){
+        errors.password = 'La contraseña debe tener al menos un numero';
+    }
+
+    if(!userData.password.length < 6 || !userData.password.length > 10 ){
+        errors.password = 'La contraseña debe tener una longitud entre  6 y 10 caracteres';
+    }
+
+
+    return errors
 }
 
 export default validation;
