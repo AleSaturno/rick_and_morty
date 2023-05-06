@@ -18,6 +18,8 @@ const Form = () =>{
             ...userData,
             [event.target.name]: event.target.value
         })
+
+
         setErrors(validation({
             ...userData,
             [event.target.name]: event.target.value
@@ -41,8 +43,12 @@ const Form = () =>{
                 <label htmlFor="email"></label>
                 <input type="text" name="email" placeholder="Usuario" value={userData.email} onChange={handleChange} />
 
+                {errors.email && <p>{errors.email}</p>}
+
                 <label htmlFor="password"></label>
                 <input type="password" name="password" placeholder="Contraseña" value={userData.password} onChange={handleChange}  />
+                
+                {errors.password && <p>{errors.password}</p>}
 
                 <button type="submit" className={style.custom}>Iniciar Sesión</button>
                 <br />
