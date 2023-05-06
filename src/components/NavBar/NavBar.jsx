@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 const NavBar = ({onSearch}) =>{
     return (
         <nav className ={style.nav} >
+            <ul>
+                <SearchBar onSearch = {onSearch}/>
+            </ul>
+
             <div className={style.buttonContainer}>
                 <button className={style.Link}>
                     <NavLink to= '/home'>Home</NavLink> 
@@ -14,9 +18,6 @@ const NavBar = ({onSearch}) =>{
                 </button>
                 
             </div>
-            <ul>
-                <SearchBar onSearch = {onSearch}/>
-            </ul>
         </nav>
     )
 }
