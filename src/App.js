@@ -1,15 +1,40 @@
 import './App.css';
 import Cards from './components/Cards/Cards.jsx';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import axios from 'axios';
-import {Routes, Route, useLocation } from 'react-router-dom';
+import {Routes, Route, useLocation , useNavigate } from 'react-router-dom';
 import About from './components/About/about.jsx';
 import Detail from './components/Detail/Detail';
 import Form from './components/Formulario/Form';
 
 
 function App() {
+
+   const [access , setAccess] = useState(false)
+   const navigate = useNavigate();
+   const Email = 'admin';
+   const Password = '123456';
+
+   const login = (userData) =>{
+      if(userData.password === Password && userData.email === Email){
+         setAccess(true);
+         navigate('/home');
+      }
+
+   }
+
+   useEffect(() =>{
+      !access && navigate('/');
+   }, [access]);
+
+   // Hora de video 1:40:40
+
+
+
+
+
+
 
    const Location = useLocation();   
    const [characters,setCharacters] = useState([]);
@@ -46,7 +71,7 @@ function App() {
 
 
          <Routes>
-            <Route path='/' element = {<Form/>}/>
+            <Route path='/' element = {<Form login ={login}/>}/>
             <Route path = "/home" element = {<Cards characters={characters} onClose = {onClose}/>} />
             <Route path = "/about" element = {<About/>} />
             <Route path='/detail/:id' element={<Detail/>}/>
