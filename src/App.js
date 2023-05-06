@@ -3,14 +3,15 @@ import Cards from './components/Cards/Cards.jsx';
 import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import axios from 'axios';
-import {Routes, Route } from 'react-router-dom';
+import {Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/About/about.jsx';
 import Detail from './components/Detail/Detail';
+import Form from './components/Formulario/Form';
 
 
 function App() {
 
-      
+   const Location = useLocation();   
    const [characters,setCharacters] = useState([]);
    const [requestedIds, setRequestedIds] = useState([]);
    
@@ -36,9 +37,16 @@ function App() {
 
    return (
       <div className='App'>
-         <NavBar onSearch = {onSearch} />
+
+         {
+            Location.pathname !== '/'
+            ? <NavBar onSearch = {onSearch} />
+            : null 
+         }
+
 
          <Routes>
+            <Route path='/' element = {<Form/>}/>
             <Route path = "/home" element = {<Cards characters={characters} onClose = {onClose}/>} />
             <Route path = "/about" element = {<About/>} />
             <Route path='/detail/:id' element={<Detail/>}/>
