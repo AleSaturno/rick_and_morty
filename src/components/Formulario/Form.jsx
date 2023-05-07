@@ -2,7 +2,7 @@ import style from './For.module.css'
 import Imagen from './Imagen/Logo.jpg'
 import { useState } from 'react'
 import validation from '../Validation/Validation'
-import NavBar from '../NavBar/NavBar'
+
 
 const Form = ({login}) =>{
     const [errors, setErrors] = useState({});
@@ -27,26 +27,15 @@ const Form = ({login}) =>{
         }))
     }
 
-
    const handleSubmit = (event) => {
         event.preventDefault();
         login(userData);
    }
 
 
-  const [loggedIn, setLoggedIn] = useState(true);
 
-  const handleLogOut = () => {
-        setLoggedIn(false);
-    };
-    if (!loggedIn) {
-        return (
-          <div>
-            <h1>Has cerrado sesión correctamente.</h1>
-            <p>Vuelve a iniciar sesión para continuar.</p>
-          </div>
-        );
-    }
+
+ 
 
 
     return(
@@ -68,10 +57,10 @@ const Form = ({login}) =>{
                 {errors.password && <p>{errors.password}</p>}
 
                 <button type="submit" className={style.custom}>Iniciar Sesión</button>
-                <br />
+                {/* <br />
                 <a href="#">Crear cuenta nueva</a>
                 <br />
-                <a href="#">¿Olvidaste tu contraseña?</a>
+                <a href="#">¿Olvidaste tu contraseña?</a> */}
             </form>
         </div>
     )
