@@ -1,9 +1,17 @@
-
+import { useHistory } from 'react-router-dom';
 
 const LogOut = ({ onLogOut }) => {
+  const history = useHistory();
+
   const handleLogOut = () => {
-    // Aquí puedes realizar cualquier lógica adicional de cierre de sesión antes de llamar a la función `onLogOut`.
-    onLogOut();
+    localStorage.removeItem('token');
+
+    document.cookie = 
+
+    // Llamar a la función `onLogOut` para realizar acciones adicionales después del cierre de sesión.
+
+    // Redirigir al formulario de inicio de sesión y eliminar el acceso al `/home`.
+    history.push('/login');
   };
 
   return (
