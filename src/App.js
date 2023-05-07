@@ -13,7 +13,7 @@ function App() {
 
    const [access , setAccess] = useState(false)
    const navigate = useNavigate();
-   const Email = 'admin';
+   const Email = 'admin@gmail.com';
    const Password = '123456';
 
    const login = (userData) =>{
