@@ -2,9 +2,16 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import style from './NavBar.module.css'
 import { NavLink } from "react-router-dom";
 
-const NavBar = ({onSearch}) =>{
+const NavBar = ({onLogOut,onSearch}) =>{
+
+    const handleLogOut = (event) =>{
+        event.preventDefault();
+        onLogOut();
+    }
+
     return (
         <nav className ={style.nav} >
+            <button onClick={handleLogOut}>Cerrar Sesion</button>
             <ul>
                 <SearchBar onSearch = {onSearch}/>
             </ul>
@@ -16,6 +23,8 @@ const NavBar = ({onSearch}) =>{
                 <button className={style.Link}>
                     <NavLink to='/about'>about</NavLink>
                 </button>
+
+
                 
             </div>
         </nav>
