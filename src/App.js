@@ -9,6 +9,7 @@ import Detail from './components/Detail/Detail';
 import Form from './components/Formulario/Form';
 
 
+
 function App() {
 
    const [access , setAccess] = useState(false)
@@ -30,11 +31,7 @@ function App() {
 
 
 
-
-
-
-
-
+   
 
    const Location = useLocation();   
    const [characters,setCharacters] = useState([]);
@@ -65,7 +62,7 @@ function App() {
 
          {
             Location.pathname !== '/'
-            ? <NavBar onSearch = {onSearch} />
+            ? <NavBar onSearch = {onSearch}  />
             : null 
          }
 
