@@ -2,8 +2,9 @@ import style from './For.module.css'
 import Imagen from './Imagen/Logo.jpg'
 import { useState } from 'react'
 import validation from '../Validation/Validation'
+import NavBar from '../NavBar/NavBar'
 
-const Form = () =>{
+const Form = ({login}) =>{
     const [errors, setErrors] = useState({});
 
 
@@ -27,15 +28,31 @@ const Form = () =>{
     }
 
 
-   
+   const handleSubmit = (event) => {
+        event.preventDefault();
+        login(userData);
+   }
 
 
+  const [loggedIn, setLoggedIn] = useState(true);
+
+  const handleLogOut = () => {
+        setLoggedIn(false);
+    };
+    if (!loggedIn) {
+        return (
+          <div>
+            <h1>Has cerrado sesión correctamente.</h1>
+            <p>Vuelve a iniciar sesión para continuar.</p>
+          </div>
+        );
+    }
 
 
     return(
         <div>
-            <form className={style.login}>
-               
+            <form className={style.login} onSubmit={handleSubmit}>
+                
                 <img className={style.logo} src={Imagen}/>
 
                 <h1>Bienvenido</h1>
