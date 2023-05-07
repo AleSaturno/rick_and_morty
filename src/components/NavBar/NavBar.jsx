@@ -2,16 +2,21 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import style from './NavBar.module.css'
 import { NavLink } from "react-router-dom";
 
-const NavBar = ({onLogOut,onSearch}) =>{
 
-    const handleLogOut = (event) =>{
-        event.preventDefault();
-        onLogOut();
+const NavBar = ({onSearch}) =>{
+
+    const checkLocalStorage = () => {
+        if (!localStorage.getItem('auth')) {
+            window.location.href = "/"
+            return
+        }
+        return
     }
+   
 
     return (
         <nav className ={style.nav} >
-            <button onClick={handleLogOut}>Cerrar Sesion</button>
+           <button onClick={checkLocalStorage} >Cerrar Sesion</button>
             <ul>
                 <SearchBar onSearch = {onSearch}/>
             </ul>
