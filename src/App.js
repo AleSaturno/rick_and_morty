@@ -15,7 +15,7 @@ function App() {
    const [access , setAccess] = useState(false)
    const navigate = useNavigate();
    const Email = 'admin@gmail.com';
-   const Password = '123456';
+   const Password = 'asd123456';
 
    const login = (userData) =>{
       if(userData.password === Password && userData.email === Email){
@@ -26,10 +26,11 @@ function App() {
    }
 
    useEffect(() =>{
-      !access && navigate('/');
+      !access && navigate('/', '404');
    }, [access]);
 
 
+   
 
    
 
@@ -69,7 +70,7 @@ function App() {
 
          <Routes>
             <Route path='/' element = {<Form login ={login}/>}/>
-            <Route path = "/home" element = {<Cards characters={characters} onClose = {onClose}/>} />
+            <Route path = "/home" element = {<Cards characters={characters} onClose = {onClose} />} />
             <Route path = "/about" element = {<About/>} />
             <Route path='/detail/:id' element={<Detail/>}/>
          </Routes>
