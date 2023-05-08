@@ -1,0 +1,23 @@
+
+
+.bloque{
+    text-align: center;
+    border: 1px solid purple;
+    border-radius: 1.5em;
+    background-color: rgba(5, 4, 4, 0.733);
+    box-shadow: 0.5px 1px 7px rgb(151, 241, 6);
+    color: rgb(255, 68, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2px;
+    margin: 15px;
+}    
+
+.bloque h1{
+    color: rgb(255, 255, 255);
+}
+
+.bloque h2{
+    color: white;
+}
+
+
