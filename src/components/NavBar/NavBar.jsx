@@ -1,7 +1,7 @@
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import style from './NavBar.module.css'
-import { NavLink } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import Image from './Image/kindpng_1567373.png'
 
 const NavBar = ({onSearch}) =>{
 
@@ -15,23 +15,24 @@ const NavBar = ({onSearch}) =>{
    
 
     return (
+
         <nav className ={style.nav} >
-           <button onClick={checkLocalStorage} >Cerrar Sesion</button>
+            <img className={style.custom} src={Image} onClick={checkLocalStorage} />
+
+            <div className={style.botones}>
+                <button className={style.Link}>
+                    <Link to= '/home'>Home</Link> 
+                </button>
+                <button className={style.Link}>
+                    <Link to='/about'>About</Link>
+                </button>
+                
+            </div>
             <ul>
                 <SearchBar onSearch = {onSearch}/>
             </ul>
 
-            <div className={style.buttonContainer}>
-                <button className={style.Link}>
-                    <NavLink to= '/home'>Home</NavLink> 
-                </button>
-                <button className={style.Link}>
-                    <NavLink to='/about'>about</NavLink>
-                </button>
-
-
-                
-            </div>
+            
         </nav>
     )
 }
