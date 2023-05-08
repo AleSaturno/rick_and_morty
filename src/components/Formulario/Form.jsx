@@ -49,18 +49,18 @@ const Form = ({login}) =>{
                 <label htmlFor="email"></label>
                 <input type="text" name="email" placeholder="Usuario" value={userData.email} onChange={handleChange} />
 
-                {errors.email && <p>{errors.email}</p>}
+                {errors.email && <p className={style.p}>{errors.email}</p>}
 
                 <label htmlFor="password"></label>
                 <input type="password" name="password" placeholder="Contraseña" value={userData.password} onChange={handleChange}  />
                 
-                {errors.password && <p>{errors.password}</p>}
+                {errors.password && <p className={style.p}>{errors.password}</p>}
 
                 <button type="submit" className={style.custom}>Iniciar Sesión</button>
-                {/* <br />
+                <br />
                 <a href="#">Crear cuenta nueva</a>
                 <br />
-                <a href="#">¿Olvidaste tu contraseña?</a> */}
+                <a href="#">¿Olvidaste tu contraseña?</a>
             </form>
         </div>
     )
