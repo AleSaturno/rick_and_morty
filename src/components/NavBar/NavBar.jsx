@@ -18,7 +18,7 @@ const NavBar = ({onSearch}) =>{
 
         <nav className ={style.nav} >
             <img className={style.custom} src={Image} onClick={checkLocalStorage} />
-
+            
             <div className={style.botones}>
                 <button className={style.Link}>
                     <Link to= '/home'>Home</Link> 
