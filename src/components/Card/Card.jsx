@@ -50,6 +50,15 @@ const Card = ( {id, name, status, species, gender, origin ,image, onClose}) => {
    );
 }
 
+
+const mapStateToProps = (state) =>{
+   return{
+      myfavorite: state.myfavorite
+   }
+}
+
+
+
 const mapDispatchToProps = (dispatch) => {
    return {
      addFav: (id) => {
@@ -64,6 +73,6 @@ const mapDispatchToProps = (dispatch) => {
 
 
 export default connect(
-   null,// me permite acceder al estado global
+   mapDispatchToProps,// me permite acceder al estado global
    mapDispatchToProps//me permite despachar acciones
 )(Card);
