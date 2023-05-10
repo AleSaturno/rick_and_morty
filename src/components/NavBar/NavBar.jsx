@@ -24,6 +24,9 @@ const NavBar = ({onSearch}) =>{
                     <Link to= '/home'>Home</Link> 
                 </button>
                 <button className={style.Link}>
+                    <Link to= '/favorites'>Favoritos</Link>
+                </button>
+                <button className={style.Link}>
                     <Link to='/about'>About</Link>
                 </button>
                 
