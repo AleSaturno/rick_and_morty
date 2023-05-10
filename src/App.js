@@ -27,7 +27,7 @@ function App() {
    }
 
    useEffect(() =>{
-      !access && navigate('/', '404');
+      !access && navigate('/');
    }, [access]);
 
 
