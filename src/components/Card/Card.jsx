@@ -37,6 +37,15 @@ const Card = ( {id, name, status, species, gender, origin ,image, onClose, addFa
    return (
       
       <div className= {style.container}>
+         <button className={style.okay} onClick = {()=> onClose(id)}>X</button>
+          {
+            isFav ? (
+               <button className={style.mg} onClick={handleFavorite}>❤️</button>
+            ) : (
+               <button className={style.mg} onClick={handleFavorite}>🤍</button>
+            )
+         }
+           
          <img src= {image} alt='Fotito Rick' />
          <Link to={`/detail/${id}`}>
             <h2>Name: {name}</h2>
@@ -45,14 +54,8 @@ const Card = ( {id, name, status, species, gender, origin ,image, onClose, addFa
          <h2>Species : {species}</h2>
          <h2>Gender : {gender}</h2>
          <h2>Origin : {origin}</h2>
-         <button onClick = {()=> onClose(id)}>X</button>
-         {
-            isFav ? (
-               <button onClick={handleFavorite}>❤️</button>
-            ) : (
-               <button onClick={handleFavorite}>🤍</button>
-            )
-         }  
+         
+        
       </div>
    );
 }
