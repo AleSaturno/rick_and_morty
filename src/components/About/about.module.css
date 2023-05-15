@@ -1,23 +1,40 @@
 
 
 .bloque{
-    text-align: center;
     border: 1px solid purple;
     border-radius: 1.5em;
     background-color: rgba(5, 4, 4, 0.733);
-    box-shadow: 0.5px 1px 7px rgb(151, 241, 6);
-    color: rgb(255, 68, 0);
+    box-shadow: 0.5px 1px 7px rgb(69, 6, 241);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 2px;
-    margin: 15px;
-}    
+    padding: 5px;
+    margin: 10px;
+}
+
+.bloque p{
+    color: rgb(255, 68, 0);
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 18px;
+   text-align: center;
+}
+
 
 .bloque h1{
     color: rgb(255, 255, 255);
+    font-size: 30px;
 }
 
 .bloque h2{
     color: white;
+}
+
+.bloque h3{
+    color: white;
+    font-size: 22px;
+}
+
+.bloque h5{
+    color: yellow;
+    font-size: 15px;
 }
 
 
