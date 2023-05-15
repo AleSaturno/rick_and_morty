@@ -1,5 +1,6 @@
 .contenedor{
-    display: flex;
-    justify-Content: center;
-    padding-top: 1%;
+    display:flex;
+    flex-wrap: wrap;
+    padding-top: 2%;
+    
 }
