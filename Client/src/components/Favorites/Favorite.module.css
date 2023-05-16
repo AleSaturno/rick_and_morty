@@ -1,0 +1,29 @@
+.contenedor{
+    display:flex;
+    flex-wrap: wrap;
+    padding-left: 40%
+    
+}
+
+
+.seleccion{
+    background-color: #2f06a0bb;
+    text-align: center;
+    width:45%;
+    color: #f8f8f8;
+    padding: 7px;
+    border: 1px solid purple;
+    border: 2.5px solid #000;
+    border-radius: .5em;
+}
+
+.seleccion option{
+    border-radius: .5em;
+}
+
+.seleccion:hover{
+    color: yellow;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
