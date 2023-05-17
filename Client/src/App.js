@@ -9,8 +9,6 @@ import Detail from './components/Detail/Detail';
 import Form from './components/Formulario/Form';
 import Favorites from './components/Favorites/Favorites'
 
-
-
 function App() {
 
    const [access , setAccess] = useState(false)
@@ -30,11 +28,6 @@ function App() {
       !access && navigate('/');
    }, [access]);
 
-
-   
-
-   
-
    const Location = useLocation();   
    const [characters,setCharacters] = useState([]);
    const [requestedIds, setRequestedIds] = useState([]);
@@ -43,7 +36,7 @@ function App() {
       if (requestedIds.includes(id)) {
          window.alert('¡Este ID ya fue solicitado!');
       } else {
-         axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
                setRequestedIds((oldIds) => [...oldIds, id]);
