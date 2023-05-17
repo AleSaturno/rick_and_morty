@@ -43,7 +43,7 @@ function App() {
       if (requestedIds.includes(id)) {
          window.alert('¡Este ID ya fue solicitado!');
       } else {
-         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
                setRequestedIds((oldIds) => [...oldIds, id]);
