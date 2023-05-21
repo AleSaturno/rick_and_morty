@@ -2,8 +2,6 @@ myFavorites = [];
 
 //Se creo un array vacío llamado myFavorites, cuyo array vacio se guardaran nuestras cartas que le demos en favoritos.
 
-
-
 const postFav = (req , res) =>{
     const chareacter = req.body;
 
@@ -15,7 +13,7 @@ const postFav = (req , res) =>{
 const deleteFav = (req , res) =>{
     const id = req.params.id;
 
-    myFavorites = myFavorites.filter(character => character.id !== id);
+    myFavorites = myFavorites.filter(character => character.id !== +id);
     
     res.json(myFavorites);
 };
@@ -23,5 +21,5 @@ const deleteFav = (req , res) =>{
 
 module.exports = {
     postFav,
-    deleteFav
+    deleteFav   
 }
