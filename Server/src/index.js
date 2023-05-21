@@ -1,11 +1,9 @@
 const express = require('express');
 const server = express();
-const PORT = 3001;
 const router = require('./routes/index')
+const PORT = 3001;
 
-server.listen(PORT , () =>{
-  console.log('Server escuchando en el puerto: ' + PORT)
-});
+server.use(express.json());
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -21,5 +19,9 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(express.json());
 server.use('/rickandmorty', router);
+
+server.listen(PORT , () =>{
+  console.log(`Server escuchando en el puerto: ${PORT}`)
+});
+
