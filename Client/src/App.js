@@ -14,15 +14,22 @@ function App() {
    const [access , setAccess] = useState(false)
    const navigate = useNavigate();
    
-   const login = (userData) => {
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setAccess(data);
-         access && navigate('/home');
-      });
-   }
+   const login = async (userData) => {
+      try {
+        const { email, password } = userData;
+        const URL = 'http://localhost:3001/rickandmorty/login/';
+        const response = await axios(`${URL}?email=${email}&password=${password}`);
+        const { data } = response;
+        const { access } = data;
+    
+        setAccess(data);
+        access && navigate('/home');
+      } catch (error) {
+        console.error(error);
+        // Manejar el error según sea necesario
+      }
+    };
+    
 
    useEffect(() =>{
       !access && navigate('/');
@@ -32,20 +39,27 @@ function App() {
    const [characters,setCharacters] = useState([]);
    const [requestedIds, setRequestedIds] = useState([]);
    
-   const onSearch = (id) => {
-      if (requestedIds.includes(id)) {
-         window.alert('¡Este ID ya fue solicitado!');
-      } else {
-        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-            if (data.name) {
-               setCharacters((oldChars) => [...oldChars, data]);
-               setRequestedIds((oldIds) => [...oldIds, id]);
-            } else {
-               window.alert('¡No hay personajes con este ID!');
-            }
-         });
+   const onSearch = async (id) => {
+      try {
+        if (requestedIds.includes(id)) {
+          window.alert('¡Este ID ya fue solicitado!');
+        } else {
+          const response = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+          const { data } = response;
+    
+          if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+            setRequestedIds((oldIds) => [...oldIds, id]);
+          } else {
+            window.alert('¡No hay personajes con este ID!');
+          }
+        }
+      } catch (error) {
+        console.error(error);
+        // Manejar el error según sea necesario
       }
-   }
+    };
+    
    const onClose = (id) =>{
       const charactersFiltered = characters.filter(character => character.id !== parseInt(id))
       setCharacters(charactersFiltered) 
