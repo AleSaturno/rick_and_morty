@@ -11,7 +11,7 @@ const login = (req , res) =>{
 
         //Sino verfica si el acceso es Incorrecto
     }else{
-        res.status(200).json({access: false});
+        res.status(404).json({access: false});
     }
 
 
