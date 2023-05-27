@@ -61,7 +61,7 @@ function App() {
     };
     
    const onClose = (id) =>{
-      const charactersFiltered = characters.filter(character => character.id !== parseInt(id))
+      const charactersFiltered = characters.filter(character => character.id !== id)
       setCharacters(charactersFiltered) 
    };
 
